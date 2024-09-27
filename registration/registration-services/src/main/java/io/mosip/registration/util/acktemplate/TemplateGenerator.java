@@ -353,7 +353,7 @@ public class TemplateGenerator extends BaseService {
 
 	private Map<String, Object> getDemographicData(RegistrationDTO registration, UiFieldDTO field) {
 		Map<String, Object> data = null;
-		if("UIN".equalsIgnoreCase(field.getId()) || "IDSchemaVersion".equalsIgnoreCase(field.getId()))
+		if("UIN".equalsIgnoreCase(field.getId()) || "IDSchemaVersion".equalsIgnoreCase(field.getId()) || "selectedHandles".equals(field.getId()))
 			return null;
 
 		String value = getValue(registration.getDemographics().get(field.getId()));

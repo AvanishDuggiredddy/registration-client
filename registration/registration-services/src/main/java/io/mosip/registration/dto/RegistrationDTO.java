@@ -117,8 +117,11 @@ public class RegistrationDTO {
 	}
 
 	public void addDemographicField(@NonNull String fieldId, String value) {
-		if(value != null && !value.trim().isEmpty())
+		if(value != null && !value.trim().isEmpty() && !fieldId.equals("selectedHandles"))
 			this.demographics.put(fieldId, value);
+		else if(value != null && !value.trim().isEmpty() && fieldId.equals("selectedHandles")){
+			this.demographics.put(fieldId,  Arrays.asList(value));
+		}
 	}
 
 	public void addDemographicField(@NonNull String fieldId, List<SimpleDto> values) {
